@@ -39,7 +39,8 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="com.springsimplespasos.hibernate.entidades.SimpleEntity"/>
-
+        <mapping class="com.springsimplespasos.hibernate.entidades.onetoone.Carnet"/>
+        <mapping class="com.springsimplespasos.hibernate.entidades.onetoone.Socio"/>
 
     </session-factory>
 </hibernate-configuration>
