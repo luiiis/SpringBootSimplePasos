@@ -19,8 +19,8 @@ public class Empleado extends Persona {
             cascade = CascadeType.ALL
     )
     @JoinColumn(
-            name = "pabellon_id",
-            foreignKey = @ForeignKey(name = "FK_PABELLON_ID")
+            name = "pabellon_id"
+            //foreignKey = @ForeignKey(name = "FK_PABELLON_ID")
     )
     private Pabellon pabellon;
 
