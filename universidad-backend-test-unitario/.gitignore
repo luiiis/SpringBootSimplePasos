@@ -1,0 +1,4 @@
+# Ignora todos los archivos de power point
+*.pptx
+# Ignora todos los archivos de .gitingnore
+*.gitingnore
