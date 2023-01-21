@@ -26,24 +26,29 @@ public class AlumnosCommand implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        /*Optional<Carrera> ingSistemas = carreraDAO.findById(2);
+        /*  consulta 1
+        Optional<Carrera> ingSistemas = carreraDAO.findById(2);
 
         Iterable<Persona> alumnos = personaDAO.findAll();
         alumnos.forEach(alumno -> ((Alumno)alumno).setCarrera(ingSistemas.get()));
-        alumnos.forEach(alumno -> personaDAO.save(alumno));*/
-
-        /*Optional<Persona> alumno_1 = personaDAO.findById(1);
-        /*Optional<Persona> personaNomApe = personaDAO.buscarPorNombreYApellido(alumno_1.get().getNombre(), alumno_1.get().getApellido());
+        alumnos.forEach(alumno -> personaDAO.save(alumno));
+*/
+        /*Consulta 2
+        Optional<Persona> alumno_1 = personaDAO.findById(1);
+        Optional<Persona> personaNomApe = personaDAO.buscarPorNombreYApellido(alumno_1.get().getNombre(), alumno_1.get().getApellido());
         System.out.println(personaNomApe.toString());
 
         Optional<Persona> personaDni = personaDAO.buscarPorDni(alumno_1.get().getDni());
         System.out.println(personaDni.toString());
 
         Iterable<Persona> personasApellido = personaDAO.buscarPersonaPorApellido(alumno_1.get().getApellido());
-        personasApellido.forEach(System.out::println);*/
+        personasApellido.forEach(System.out::println);
+        */
 
-       /* Optional<Carrera> ingSistemas = carreraDAO.findById(2);
+       /* CONSULTA 3
+       Optional<Carrera> ingSistemas = carreraDAO.findById(2);
         Iterable<Persona> alumnosCarrera = ((AlumnoDAO) personaDAO).buscarAlumnosPorNombreCarrera(ingSistemas.get().getNombre());
-        alumnosCarrera.forEach(System.out::println);*/
+        alumnosCarrera.forEach(System.out::println);
+        */
     }
 }
