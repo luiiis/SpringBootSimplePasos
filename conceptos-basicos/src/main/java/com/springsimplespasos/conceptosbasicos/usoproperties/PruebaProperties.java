@@ -8,9 +8,15 @@ import org.springframework.stereotype.Component;
 public class PruebaProperties implements CommandLineRunner {
     @Autowired
     ReadCommonProperties commonProperties;
+    @Autowired
+    ReadFooProperties fooProperties;
     @Override
     public void run(String... args) throws Exception{
+
         System.out.println("app.base.url: "+ commonProperties.getBaseUrl());
+        System.out.println("----------------------------------------------");
+        System.out.println("app.foo.client: "+ fooProperties.getClientURL());
+        System.out.println("app.foo.customer: "+ fooProperties.getCustomerUrl());
 
     }
 }
