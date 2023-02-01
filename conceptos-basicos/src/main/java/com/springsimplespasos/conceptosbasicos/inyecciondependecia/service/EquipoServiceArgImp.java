@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-@Component
+@Component("equipo-argentina")
 public class EquipoServiceArgImp implements EquipoService{
     private List<Equipo> equipos = new ArrayList<>(Arrays.asList(
             new Equipo(1,"Luis Eduardo",1906, LocalDate.of(1901,8,25)),
