@@ -1,0 +1,20 @@
+servidor:
+  aplicacion:
+    nombre: lectura de fichero taml
+    url: http://lecturatml.demo
+    descripcion: inyeccion desde fichero yaml con spring boot
+  configuracion:
+    ips:
+      -10.80.10.190
+      -10.80.10.150
+      -10.80.10.110
+    files-system:
+      - c:/data
+      - c:/data/bin
+  usuarios:
+    root:
+      username: root
+      password: passroot
+    guest:
+      username: guest
+      password: passguest
