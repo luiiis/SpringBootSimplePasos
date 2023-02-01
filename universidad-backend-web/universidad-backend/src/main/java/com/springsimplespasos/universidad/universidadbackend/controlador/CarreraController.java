@@ -4,11 +4,10 @@ import com.springsimplespasos.universidad.universidadbackend.exception.BadReques
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/carreras")
@@ -26,5 +25,17 @@ public class CarreraController {
         }
         return carreras;
     }
-
+@GetMapping("/{codigo}")
+    public Carrera obtenerPorId(@PathVariable(value = "codigo",required = false) Integer id){
+        Optional<Carrera> oCarrera=carreraDAO.findById(id);
+        if(!oCarrera.isPresent()){
+            throw new BadRequestException(String.format("La carrera con id no existe: "+id));
+        }
+        return oCarrera.get();
+    }
+    @PostMapping
+public Carrera altaCarrera(@RequestBody Carrera carrera)
+{
+   return carreraDAO.save(carrera);
+}
 }
