@@ -1,0 +1,8 @@
+# Ignora todos los archivos de pdf
+*.pdf
+# Ignora todos los archivos de .msi
+*.msi
+# Ignora todos los archivos de .zip
+*.zip
+# Ignora todos los archivos de .pptx
+*.pptx
