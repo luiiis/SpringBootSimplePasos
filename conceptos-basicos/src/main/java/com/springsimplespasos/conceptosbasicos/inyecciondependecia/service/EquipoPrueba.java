@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EquipoPrueba implements CommandLineRunner {
     @Autowired
-    @Qualifier("equipo-argentina")//nos ayuda a utilizar el componente a utilizar
+    //@Qualifier("equipo-argentina")//nos ayuda a utilizar el componente a utilizar
     EquipoService equipoService;
     @Override
     public void run(String... args) throws Exception {
