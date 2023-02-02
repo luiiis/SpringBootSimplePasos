@@ -11,23 +11,16 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/carreras")
-public class CarreraController {
-    private final CarreraDAO carreraDAO;
+public class CarreraController extends GenericController<Carrera,CarreraDAO>{
     @Autowired
-    public CarreraController(CarreraDAO carreraDao){
-        this.carreraDAO=carreraDao;
-    }
-  @GetMapping
-    public List<Carrera> obtenerTodos(){
-        List<Carrera> carreras = (List<Carrera>) carreraDAO.findAll();
-        if(carreras.isEmpty()){
-            throw new BadRequestException("no Existen carreras");
-        }
-        return carreras;
+    public CarreraController(CarreraDAO service){
+
+        super(service);
+        nombreEntidad="Carrera";
     }
 @GetMapping("/{codigo}")
     public Carrera obtenerPorId(@PathVariable(value = "codigo",required = false) Integer id){
-        Optional<Carrera> oCarrera=carreraDAO.findById(id);
+        Optional<Carrera> oCarrera=service.findById(id);
         if(!oCarrera.isPresent()){
             throw new BadRequestException(String.format("La carrera con id no existe: "+id));
         }
@@ -41,24 +34,24 @@ public Carrera altaCarrera(@RequestBody Carrera carrera)
     if(carrera.getCantidaMaterias()<0){
         throw new BadRequestException("El campo cantidad de materias no puede ser negativo");
     }
-   return carreraDAO.save(carrera);
+   return service.save(carrera);
 }
 @PutMapping("/{id}")
 public Carrera actualizarCarrera(@PathVariable Integer id,@RequestBody Carrera carrera){
         Carrera carreraUpdate=null;
-       Optional<Carrera> oCarrera = carreraDAO.findById(id);
+       Optional<Carrera> oCarrera = service.findById(id);
        if(!oCarrera.isPresent()){
            throw new BadRequestException("La carra con id no existe "+id);
     }
        carreraUpdate=oCarrera.get();
     carreraUpdate.setCantidadAnios(carrera.getCantidadAnios());
        carreraUpdate.setCantidaMaterias(carrera.getCantidaMaterias());
-       return carreraDAO.save(carreraUpdate);
+       return service.save(carreraUpdate);
 
 }
 @DeleteMapping("/{id}")
 public void eliminarCarrera(@PathVariable Integer id){
-        carreraDAO.deleteById(id);
+        service.deleteById(id);
 }
 
 }
