@@ -22,6 +22,11 @@ public class GenericController <E,S extends GenericoDAO<E>> {
         }
         return listado;
     }
+    //obtenerPorID(id
+
+    //borrarEntidadPorId(id)
+
+    //altaEntidad(entidad)
 
 
 }
