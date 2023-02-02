@@ -1,7 +1,10 @@
 package com.springsimplespasos.universidad.universidadbackend.controlador;
 
 import com.springsimplespasos.universidad.universidadbackend.exception.BadRequestException;
+import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Alumno;
+import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Persona;
+import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.PersonaDAO;
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,9 +19,11 @@ import java.util.Optional;
 public class AlumnoController {
 
     private final PersonaDAO alumnoDao;
+    private final CarreraDAO carreraDAO;
 
-    public AlumnoController(@Qualifier("alumnoDAOImpl")PersonaDAO alumnoDao){
+    public AlumnoController(@Qualifier("alumnoDAOImpl")PersonaDAO alumnoDao, CarreraDAO carreraDAO){
         this.alumnoDao=alumnoDao;
+        this.carreraDAO = carreraDAO;
     }
     @GetMapping
     public List<Persona> obtenerTodos(){
@@ -57,5 +62,20 @@ public class AlumnoController {
     @DeleteMapping("/{id}")
     public void eliminarAlumno(@PathVariable Integer id){
         alumnoDao.deleteById(id);
+    }
+    @PutMapping("/{idAlumno}/carrera/{idCarrera}")
+    public Persona asignarCarreraAlumno(@PathVariable Integer idAlumno, @PathVariable Integer idCarrera){
+        Optional<Persona> oAlumno=alumnoDao.findById(idAlumno);
+        if(!oAlumno.isPresent()){
+            throw new BadRequestException(String.format("Alumno con id no existe "+idAlumno));
+        }
+        Optional<Carrera>oCarrer= carreraDAO.findById(idCarrera);
+        if(!oCarrer.isPresent()){
+            throw new BadRequestException(String.format("Carrera con id %d no existe ",idCarrera));
+        }
+        Persona alumno = oAlumno.get();
+        Carrera carrera=oCarrer.get();
+        ((Alumno)alumno).setCarrera(carrera);
+        return alumnoDao.save(alumno);
     }
 }
