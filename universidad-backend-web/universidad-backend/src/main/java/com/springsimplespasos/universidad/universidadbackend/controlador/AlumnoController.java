@@ -7,6 +7,7 @@ import com.springsimplespasos.universidad.universidadbackend.servicios.contratos
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,5 +40,22 @@ public class AlumnoController {
     @PostMapping
     public Persona altaAlumno(@RequestBody Persona alumno){
         return alumnoDao.save(alumno);
+    }
+    @PutMapping("/{id}")
+    public Persona actualizarAlumnos(@PathVariable Integer id,@RequestBody Persona persona){
+        Persona alumnoUpdate = null;
+        Optional<Persona> oAlumno=alumnoDao.findById(id);
+        if(!oAlumno.isPresent()){
+            throw new BadRequestException(String.format("Alumno con id no existe "+id));
+        }
+        alumnoUpdate=oAlumno.get();
+        alumnoUpdate.setNombre(persona.getNombre());
+        alumnoUpdate.setApellido(persona.getApellido());
+        alumnoUpdate.setDireccion(persona.getDireccion());
+        return alumnoDao.save(alumnoUpdate);
+    }
+    @DeleteMapping("/{id}")
+    public void eliminarAlumno(@PathVariable Integer id){
+        alumnoDao.deleteById(id);
     }
 }
