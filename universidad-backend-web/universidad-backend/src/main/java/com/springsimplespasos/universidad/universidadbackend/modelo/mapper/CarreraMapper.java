@@ -1,0 +1,16 @@
+package com.springsimplespasos.universidad.universidadbackend.modelo.mapper;
+
+import com.springsimplespasos.universidad.universidadbackend.modelo.dto.CarreraDTO;
+import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
+import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
+
+public class CarreraMapper {
+    public static CarreraDTO mapCarrera(Carrera carrera){
+        CarreraDTO dto = new CarreraDTO();
+        dto.setNombre(carrera.getNombre());
+        dto.setCantidad_anios(carrera.getCantidadAnios());
+        dto.setCantidad_materias(carrera.getCantidaMaterias());
+        return dto;
+    }
+    
+}
