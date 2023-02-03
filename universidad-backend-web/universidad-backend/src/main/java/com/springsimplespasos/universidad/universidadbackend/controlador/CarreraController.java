@@ -5,8 +5,10 @@ import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Ca
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,17 +32,26 @@ public class CarreraController extends GenericController<Carrera,CarreraDAO>{
         }
         return oCarrera.get();
     }
+
+     */
     @PostMapping
-public Carrera altaCarrera(@RequestBody Carrera carrera)
-{ if(carrera.getCantidadAnios()<0){
+public ResponseEntity<?> altaCarrera(@Valid @RequestBody Carrera carrera, BindingResult result)
+{/* if(carrera.getCantidadAnios()<0){
     throw new BadRequestException("El campo cantidad de años no puede ser negativo");
 }
     if(carrera.getCantidaMaterias()<0){
         throw new BadRequestException("El campo cantidad de materias no puede ser negativo");
+    }*/
+    Map<String,Object> validaciones=new HashMap<>();
+
+    if(result.hasErrors()){
+        result.getFieldErrors().forEach(error->validaciones.put(error.getField(),error.getDefaultMessage()));
+        return ResponseEntity.badRequest().body(validaciones);
     }
-   return service.save(carrera);
+
+   return ResponseEntity.ok(service.save(carrera));
 }
-*/
+
 
 @PutMapping("/{id}")
 public ResponseEntity<?> actualizarCarrera(@PathVariable Integer id, @RequestBody Carrera carrera){
