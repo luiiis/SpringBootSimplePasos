@@ -16,14 +16,10 @@ public class Carrera implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @NotNull
-    @NotEmpty(message="Debe de ingresar un valor")
-    @Size(min=0,max = 80)
-    //@Pattern(regexp = "")
-    //@javax.validation.constraints.
+
     @Column(nullable = false, unique = true, length = 80)
     private String nombre;
-    @Positive(message = "El valor no puede ser negativo")
+
     @Column(name = "cantidad_materias")
     private Integer cantidaMaterias;
     @Positive(message = "El valor no puede ser negativo")
