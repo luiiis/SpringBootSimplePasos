@@ -3,7 +3,7 @@ package com.springsimplespasos.universidad.universidadbackend.modelo.mapper;
 import com.springsimplespasos.universidad.universidadbackend.modelo.dto.CarreraDTO;
 import com.springsimplespasos.universidad.universidadbackend.modelo.entidades.Carrera;
 import com.springsimplespasos.universidad.universidadbackend.servicios.contratos.CarreraDAO;
-
+@Deprecated
 public class CarreraMapper {
     public static CarreraDTO mapCarrera(Carrera carrera){
         CarreraDTO dto = new CarreraDTO();
