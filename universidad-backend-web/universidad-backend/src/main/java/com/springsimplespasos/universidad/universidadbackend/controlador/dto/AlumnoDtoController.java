@@ -22,21 +22,20 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/alumnos")
 @ConditionalOnProperty(prefix = "app",name="controller.enable-dto",havingValue = "true")
-public class AlumnoDtoController{
-    @Autowired
-    @Qualifier("alumnoDAOImpl")
-    private PersonaDAO personaDAO;
-    @Autowired
-    private AlumnoMapper mapper;
+public class AlumnoDtoController extends PersonaDtoController{
+
+    public AlumnoDtoController(PersonaDAO service, AlumnoMapper alumnoMapper) {
+        super(service ,"Alumno", alumnoMapper);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerAlumnoPorId(@PathVariable Integer id){
-        Optional<Persona> oPersona= personaDAO.findById(id);
+       // Optional<Persona> oPersona= personaDAO.findById(id);
          Map<String,Object> mensaje = new HashMap<>();
-        PersonaDTO dto = mapper.mapAlumno((Alumno) oPersona.get());
+      //  PersonaDTO dto = mapper.mapAlumno((Alumno) oPersona.get());
 
         mensaje.put("success",Boolean.TRUE);
-        mensaje.put("data",dto);
+        //mensaje.put("data",dto);
         return ResponseEntity.ok(mensaje);
     }
     @PostMapping
@@ -45,16 +44,13 @@ public class AlumnoDtoController{
 
         if(result.hasErrors()){
             mensaje.put("success",Boolean.FALSE);
-            Map<String,Object> validaciones= new HashMap<>();
-            result.getFieldErrors()
-                    .forEach(error->validaciones.put(error.getField(),error.getDefaultMessage()));
-            mensaje.put("validaciones",validaciones);
+            mensaje.put("validaciones",super.obtenerValidaciones(result));
             return ResponseEntity.badRequest().body(mensaje);
         }
-        Persona save=personaDAO.save(mapper.mapAlumno((AlumnoDTO) personaDTO));
+        PersonaDTO save= super.altaPersona(alumnoMapper.mapAlumno((AlumnoDTO) personaDTO));
 
         mensaje.put("success",Boolean.TRUE);
-        mensaje.put("data",mapper.mapAlumno((Alumno) save));
+        mensaje.put("data", save);
         return ResponseEntity.status(HttpStatus.CREATED).body(mensaje);
 
 
