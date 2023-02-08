@@ -390,3 +390,62 @@
 2023-02-08 03:45:47,568 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 9081 (http) with context path '/api/v2/universidad'
 2023-02-08 03:45:53,568 INFO o.a.j.l.DirectJDKLog [http-nio-9081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-02-08 03:45:53,623 INFO o.s.w.s.FrameworkServlet [http-nio-9081-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-08 03:45:53,653 INFO o.s.w.s.FrameworkServlet [http-nio-9081-exec-1] Completed initialization in 17 ms
+2023-02-08 03:45:53,913 INFO o.s.b.StartupInfoLogger [main] Started UniversidadBackendApplication in 52.689 seconds (JVM running for 54.296)
+2023-02-08 03:57:14,984 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2023-02-08 03:57:14,992 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-08 03:57:14,999 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-02-08 03:57:15,036 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2023-02-08 03:57:34,006 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-02-08 03:57:34,028 INFO o.s.b.StartupInfoLogger [main] Starting UniversidadBackendApplication using Java 11.0.18 on LEE with PID 7760 (C:\xampp\htdocs\Udemy\SpringBootSimplePasos\universidad-backend-web\universidad-backend\target\classes started by luis in C:\xampp\htdocs\Udemy\SpringBootSimplePasos\universidad-backend-web\universidad-backend)
+2023-02-08 03:57:34,031 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-02-08 03:57:41,667 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-08 03:57:41,925 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 236 ms. Found 4 JPA repository interfaces.
+2023-02-08 03:57:54,192 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 9081 (http)
+2023-02-08 03:57:54,224 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9081"]
+2023-02-08 03:57:54,226 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-08 03:57:54,227 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2023-02-08 03:57:54,692 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-08 03:57:54,693 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 20495 ms
+2023-02-08 03:57:55,084 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-08 03:57:55,231 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-02-08 03:57:55,601 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-08 03:57:55,944 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-02-08 03:57:56,458 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-02-08 03:57:56,544 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-02-08 03:58:09,180 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-08 03:58:09,200 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-08 03:58:18,100 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-08 03:58:18,621 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-08 03:58:24,519 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9081"]
+2023-02-08 03:58:24,571 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 9081 (http) with context path '/api/v2/universidad'
+2023-02-08 03:58:25,187 INFO o.s.b.StartupInfoLogger [main] Started UniversidadBackendApplication in 52.135 seconds (JVM running for 53.661)
+2023-02-08 04:02:13,043 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2023-02-08 04:02:13,068 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-08 04:02:13,078 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-02-08 04:02:13,110 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2023-02-08 04:02:23,036 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-02-08 04:02:23,057 INFO o.s.b.StartupInfoLogger [main] Starting UniversidadBackendApplication using Java 11.0.18 on LEE with PID 10188 (C:\xampp\htdocs\Udemy\SpringBootSimplePasos\universidad-backend-web\universidad-backend\target\classes started by luis in C:\xampp\htdocs\Udemy\SpringBootSimplePasos\universidad-backend-web\universidad-backend)
+2023-02-08 04:02:23,059 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-02-08 04:02:31,526 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-08 04:02:32,893 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 1143 ms. Found 4 JPA repository interfaces.
+2023-02-08 04:02:36,803 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 9081 (http)
+2023-02-08 04:02:36,830 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9081"]
+2023-02-08 04:02:36,832 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-08 04:02:36,833 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2023-02-08 04:02:37,155 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-08 04:02:37,156 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 13624 ms
+2023-02-08 04:02:37,543 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-08 04:02:37,657 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-02-08 04:02:37,988 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-08 04:02:39,533 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-02-08 04:02:43,176 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-02-08 04:02:43,279 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-02-08 04:02:50,658 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-08 04:02:50,688 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-08 04:02:55,436 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-08 04:02:58,500 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-08 04:02:59,192 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9081"]
+2023-02-08 04:02:59,244 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 9081 (http) with context path '/api/v2/universidad'
+2023-02-08 04:03:04,820 INFO o.s.b.StartupInfoLogger [main] Started UniversidadBackendApplication in 42.67 seconds (JVM running for 44.256)
+2023-02-08 04:03:16,044 INFO o.a.j.l.DirectJDKLog [http-nio-9081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
