@@ -22,7 +22,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/alumnos")
 @ConditionalOnProperty(prefix = "app",name="controller.enable-dto",havingValue = "true")
-public class AlumnoDtoController {
+public class AlumnoDtoController{
     @Autowired
     @Qualifier("alumnoDAOImpl")
     private PersonaDAO personaDAO;
