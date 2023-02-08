@@ -21,7 +21,7 @@ public class SpringFoxSwagger {
     public Docket getDocket(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.springsimplespasos.universidad.  universidadbackend.controlador.dto"))
+                .apis(RequestHandlerSelectors.basePackage("com.springsimplespasos.universidad.universidadbackend.controlador.dto"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
